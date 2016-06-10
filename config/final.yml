@@ -1,0 +1,6 @@
+---
+blobstore:
+  provider: s3
+  options:
+    bucket_name: postgresql-forge-boshrelease
+final_name: postgresql-forge
