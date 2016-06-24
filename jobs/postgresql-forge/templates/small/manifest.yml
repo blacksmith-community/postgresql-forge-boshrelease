@@ -9,7 +9,7 @@ meta:
   hba:
   - host all all 0.0.0.0/0 md5
   - host all all ::/0 md5
-  
+
 releases:
 - name: postgres
   version: latest
@@ -65,12 +65,3 @@ instance_groups:
   networks:
   - name: default
 
-
-properties:
-  users:
-    - username: porcupine
-      password: quill
-    - username: hedgehog
-      password: frank
-    - username: smoke-tests
-      password: if-ya-got-em
