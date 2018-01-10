@@ -1,4 +1,5 @@
 #!/bin/bash
+set -eu
 
 # init - Bootstrap Script for Postgresql Forge.
 #           Generates username and password for the
@@ -6,3 +7,5 @@
 
 safe gen ${CREDENTIALS}/postgresql username
 safe gen ${CREDENTIALS}/postgresql password
+
+exit 0

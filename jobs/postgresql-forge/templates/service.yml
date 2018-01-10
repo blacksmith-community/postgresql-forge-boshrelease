@@ -1,7 +1,0 @@
-id: 56347406-2f6b-11e6-8c30-4f5a339f8db4
-name: postgresql
-description: bare metal postgresql
-bindable: true
-tags:
-- keyvalue
-- redis
