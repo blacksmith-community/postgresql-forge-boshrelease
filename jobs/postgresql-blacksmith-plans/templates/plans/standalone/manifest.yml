@@ -4,7 +4,7 @@ meta:
   service:
     username: (( vault $CREDENTIALS "/postgresql:username" ))
     password: (( vault $CREDENTIALS "/postgresql:password" ))
-    port: 3606
+    port: 5432
   users:
   - username: (( grab meta.service.username ))
     password: (( grab meta.service.password ))
@@ -49,7 +49,7 @@ instance_groups:
           db: {as: postgres}
         properties:
           config:
-            port: 5432
+            port: (( grab meta.service.port ))
           replication:
             enabled: true
           hba:   (( grab meta.hba ))

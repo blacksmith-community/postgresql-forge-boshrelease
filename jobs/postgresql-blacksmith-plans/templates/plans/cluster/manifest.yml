@@ -4,7 +4,7 @@ meta:
   service:
     username: (( vault $CREDENTIALS "/postgresql:username" ))
     password: (( vault $CREDENTIALS "/postgresql:password" ))
-    port: 3606
+    port: 5432
   users:
   - username: (( grab meta.service.username ))
     password: (( grab meta.service.password ))
@@ -63,7 +63,7 @@ instance_groups:
           backend:
             port: 6432
           config:
-            port: 5432
+            port: (( grab meta.service.port ))
             enable_pool_hba: on
           hba: (( grab meta.hba ))
           pcp:
