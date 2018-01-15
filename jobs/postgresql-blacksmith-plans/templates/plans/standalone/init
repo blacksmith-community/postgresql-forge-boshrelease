@@ -5,7 +5,7 @@ set -eu
 #           Generates username and password for the
 #           new Redis environment.
 
-safe gen ${CREDENTIALS}/postgresql username
-safe gen ${CREDENTIALS}/postgresql password
+safe gen -l 16 ${CREDENTIALS}/postgresql username
+safe gen       ${CREDENTIALS}/postgresql password
 
 exit 0
