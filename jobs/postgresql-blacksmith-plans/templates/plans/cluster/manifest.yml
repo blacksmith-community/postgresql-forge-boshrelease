@@ -48,24 +48,27 @@ instance_groups:
         provides:
           db: {as: postgres}
         properties:
-          config:
-            port: 6432
-          replication:
-            enabled: true
-          hba:   (( grab meta.hba ))
-          users: (( grab meta.users ))
+          postgres:
+            config:
+              listen_addresses: 0.0.0.0
+              port: 6432
+            replication:
+              enabled: true
+            hba:   (( grab meta.hba ))
+            users: (( grab meta.users ))
 
       - name: pgpool
         release: postgres
         consumes:
           db: {from: postgres}
         properties:
-          backend:
-            port: 6432
-          config:
-            port: (( grab meta.service.port ))
-            enable_pool_hba: on
-          hba: (( grab meta.hba ))
+          pgpool:
+            backend:
+              port: 6432
+            config:
+              port: (( grab meta.service.port ))
+              enable_pool_hba: on
+            hba: (( grab meta.hba ))
+            users: (( grab meta.users ))
           pcp:
             system_password: secret
-          users: (( grab meta.users ))

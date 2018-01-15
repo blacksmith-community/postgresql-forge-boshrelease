@@ -48,9 +48,10 @@ instance_groups:
         provides:
           db: {as: postgres}
         properties:
-          config:
-            port: (( grab meta.service.port ))
-          replication:
-            enabled: true
-          hba:   (( grab meta.hba ))
-          users: (( grab meta.users ))
+          postgres:
+            config:
+              listen_addresses: 0.0.0.0
+              port: (( grab meta.service.port ))
+            hba:   (( grab meta.hba ))
+          pgpool:
+            users: (( grab meta.users ))
