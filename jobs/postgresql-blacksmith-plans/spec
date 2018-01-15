@@ -5,9 +5,15 @@ templates:
 
   plans/service.yml:                plans/service.yml
 
+  # standalone postgresql database
   plans/standalone/manifest.yml:    plans/standalone/manifest.yml
   plans/standalone/credentials.yml: plans/standalone/credentials.yml
   plans/standalone/init:            plans/standalone/init
+
+  # multi-node postgresql cluster
+  plans/cluster/manifest.yml:       plans/cluster/manifest.yml
+  plans/cluster/credentials.yml:    plans/cluster/credentials.yml
+  plans/cluster/init:               plans/cluster/init
 
 
 properties:
