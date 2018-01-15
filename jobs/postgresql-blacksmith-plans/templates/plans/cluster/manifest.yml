@@ -56,6 +56,7 @@ instance_groups:
             replication:
               enabled: true
             hba:   (( grab meta.hba ))
+          pgpool:
             users: (( grab meta.users ))
 
       - name: pgpool
