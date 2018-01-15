@@ -1,6 +1,7 @@
 ---
 meta:
   size: default
+  instances: 3
   service:
     username: (( vault $CREDENTIALS "/postgresql:username" ))
     password: (( vault $CREDENTIALS "/postgresql:password" ))
@@ -31,7 +32,7 @@ update:
 
 instance_groups:
   - name: postgresql
-    instances: 3
+    instances: (( grab meta.instances ))
     azs: [z1]
     networks:
       - name: postgresql-service

@@ -38,6 +38,9 @@ cat > $PLANROOT/params.yml <<EOF
 # for plan-id <%= id %> (<%= plan["name"] || id %>)
 meta:
   size: <%= plan["vm_type"] || 'default' %>
+<% if plan["vm_instances"] && plan["vm_instances"] > 1 %>
+  instances: <%= plan["vm_instances"] %>
+<% end %>
 EOF
 
 
