@@ -2,6 +2,8 @@
 meta:
   size: default
   instances: 3
+  default:
+    azs: [z1,z2]
   service:
     username: (( vault $CREDENTIALS "/postgresql:username" ))
     password: (( vault $CREDENTIALS "/postgresql:password" ))
@@ -34,9 +36,8 @@ update:
 instance_groups:
   - name: postgresql
     instances: (( grab meta.instances ))
-    azs: [z1]
-    networks:
-      - name: postgresql-service
+    azs: (( grab meta.azs || meta.default.azs ))
+    networks: [name: (( grab meta.net || meta.default.azs ))
     stemcell: default
 
     vm_type: (( grab meta.size ))

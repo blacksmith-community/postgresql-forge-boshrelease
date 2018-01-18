@@ -38,8 +38,15 @@ cat > $PLANROOT/params.yml <<EOF
 # for plan-id <%= id %> (<%= plan["name"] || id %>)
 meta:
   size: <%= plan["vm_type"] || 'default' %>
+  net:  <%= plan["network"] || 'postgresql-service' %>
+  disk: <%= plan["disk"]    || 2_048 %>
+
 <% if plan["vm_instances"] && plan["vm_instances"] > 1 %>
   instances: <%= plan["vm_instances"] %>
+<% end %>
+
+<% if plan["azs"] %>
+  azs: <%= plan["azs"] %>
 <% end %>
 EOF
 
