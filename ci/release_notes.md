@@ -1,5 +1,7 @@
 # Improvements
 
+- We have documentation now!
+
 - Operators can now override the default network on a per-plan
   basis, allowing a single forge to deploy to different networks.
 
