@@ -41,8 +41,8 @@ meta:
   net:  <%= plan["network"] || 'postgresql-service' %>
   disk: <%= plan["disk"]    || 2_048 %>
 
-<% if plan["vm_instances"] && plan["vm_instances"] > 1 %>
-  instances: <%= plan["vm_instances"] %>
+<% if plan["instances"] && plan["instances"] > 1 %>
+  instances: <%= plan["instances"] %>
 <% end %>
 
 <% if plan["azs"] %>
