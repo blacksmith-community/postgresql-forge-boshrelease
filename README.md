@@ -208,6 +208,6 @@ before submitting a PR.
 
 
 
-[1]: https://github.com/blacksmith-community/postgresql-forge-boshrelease
+[1]: https://github.com/blacksmith-community/postgresql-forge-boshrelease/issues
 [broker]: https://github.com/cloudfoundry-community/blacksmith
 [postgresql]:  https://postgresql.org
