@@ -37,7 +37,7 @@ instance_groups:
   - name: postgresql
     instances: (( grab meta.instances ))
     azs: (( grab meta.azs || meta.default.azs ))
-    networks: [name: (( grab meta.net || meta.default.azs ))
+    networks: [name: (( grab meta.net || meta.default.azs ))]
     stemcell: default
 
     vm_type: (( grab meta.size ))
