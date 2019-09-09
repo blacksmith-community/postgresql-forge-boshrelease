@@ -49,7 +49,6 @@ properties:
           vm_type: default
 
       Configuration keys beyond `name', `description', `limit', and `type' are type-specific.
-          limit: 7
 
       For type=standalone:
 
