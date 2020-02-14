@@ -16,10 +16,10 @@ meta:
   - host all all ::/0 md5
 
 releases:
-  - name: postgres
-    version: 2.0.0
-    url: https://github.com/cloudfoundry-community/postgres-boshrelease/releases/download/v2.0.0/postgres-2.0.0.tgz
-    sha1: dea5cad517c62afaf97a1b31df41ad691928d960
+- name:    postgres
+  version: 3.2.1
+  url:     https://github.com/cloudfoundry-community/postgres-boshrelease/releases/download/v3.2.1/postgres-3.2.1.tgz
+  sha1:    b687753085f770807603642b4bae6c17a483900b
 
 stemcells:
 - alias: default
@@ -55,5 +55,3 @@ instance_groups:
               listen_addresses: 0.0.0.0
               port: (( grab meta.service.port ))
             hba:   (( grab meta.hba ))
-          pgpool:
-            users: (( grab meta.users ))
