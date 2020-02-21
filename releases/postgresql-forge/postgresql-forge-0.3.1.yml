@@ -1,0 +1,14 @@
+name: postgresql-forge
+version: 0.3.1
+commit_hash: 20f3f31
+uncommitted_changes: false
+jobs:
+- name: postgresql-blacksmith-plans
+  version: d6aaa30659b130cfdcf723da4f6cd4124c1656f34c87fb6fc70eec82f3d80fdb
+  fingerprint: d6aaa30659b130cfdcf723da4f6cd4124c1656f34c87fb6fc70eec82f3d80fdb
+  sha1: sha256:dda7877beb82f1402a42ecb7deaf41bc69620dd0eef593c7f8d92bbe1a080867
+  packages: []
+license:
+  version: a5670a7da03f770955ba5d94c8cde8e7ffee19415cddcffe1392f8a3c36e313d
+  fingerprint: a5670a7da03f770955ba5d94c8cde8e7ffee19415cddcffe1392f8a3c36e313d
+  sha1: sha256:e6b2500291c368ab83dbdab45bf95c42127ff85a2ca07a2ada10d2783e7e7bd0
