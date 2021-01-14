@@ -1,7 +1,7 @@
 ---
 meta:
   size: default
-  instances: 3
+  instances: 2
   default:
     azs: [z1,z2]
   service:
@@ -18,9 +18,9 @@ meta:
 
 releases:
   - name: postgres
-    version: 2.0.0
-    url: https://github.com/cloudfoundry-community/postgres-boshrelease/releases/download/v2.0.0/postgres-2.0.0.tgz
-    sha1: dea5cad517c62afaf97a1b31df41ad691928d960
+    version: 3.1.5
+    url: https://github.com/cloudfoundry-community/postgres-boshrelease/releases/download/v3.1.5/postgres-3.1.5.tgz
+    sha1: 30feaf3522b205812f3d363380dee57d20e5e32a
 
 stemcells:
 - alias: default
@@ -58,21 +58,4 @@ instance_groups:
             replication:
               enabled: true
             hba:   (( grab meta.hba ))
-          pgpool:
             users: (( grab meta.users ))
-
-      - name: pgpool
-        release: postgres
-        consumes:
-          db: {from: postgres}
-        properties:
-          pgpool:
-            backend:
-              port: 6432
-            config:
-              port: (( grab meta.service.port ))
-              enable_pool_hba: on
-            hba: (( grab meta.hba ))
-            users: (( grab meta.users ))
-          pcp:
-            system_password: secret
