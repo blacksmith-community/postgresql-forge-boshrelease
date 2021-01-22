@@ -35,7 +35,7 @@ update:
 instance_groups:
   - name: postgresql
     instances: 1
-    azs: [(( grab meta.az || meta.default.az ))]
+    azs: (( shuffle meta.az || meta.default.az ))
     networks: [name: (( grab meta.net ))]
     stemcell: default
 
